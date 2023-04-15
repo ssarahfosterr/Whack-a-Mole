@@ -243,8 +243,8 @@ function whack(event) {
   console.log("Whack!")
   updateScore();
   whack();
-}
 
+}
 
 /**
 *
@@ -253,13 +253,13 @@ function whack(event) {
 */
 function setEventListeners(){
   // TODO: Write your code here
-  moles.forEach(
-    mole => mole.addEventListener('click', whack)
-  );
+  for (let mole of moles) {
+    mole.addEventListener('click', whack);
+  }
 
   return moles;
 }
-setEventListeners();
+
 
 /**
 *
