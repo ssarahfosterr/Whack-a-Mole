@@ -242,7 +242,9 @@ function whack(event) {
   // TODO: Write your code here.
   console.log("Whack!")
   updateScore();
+  whack();
 }
+
 
 /**
 *
@@ -257,6 +259,7 @@ function setEventListeners(){
 
   return moles;
 }
+setEventListeners();
 
 /**
 *
