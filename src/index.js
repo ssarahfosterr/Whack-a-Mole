@@ -5,9 +5,9 @@ const startButton = document.querySelector('#start');
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
 
-let time = 0;
+let time = 10;
 let timer;
-let lastHole = 0;
+let lastHole = -1;
 let points = 0;
 let difficulty = "hard";
 
@@ -47,10 +47,10 @@ function setDelay(difficulty) {
   if (difficulty === 'normal') {
     return 1000
   }
-  if (difficulty === 'easy') {
+  
     return 1500
   }
-}
+
 
 /**
  * Chooses a random hole from a list of holes.
@@ -80,6 +80,12 @@ function chooseHole(holes) {
   lastHole = hole;
   return hole;
  }
+
+ let hole = chooseHole(holes);
+ hole.classList.toggle("show");
+ console.log(hole.innerHTML);
+ console.log(hole.classList);
+
 
 /**
 *
@@ -222,6 +228,8 @@ function startTimer() {
   return timer;
 }
 
+startTimer();
+
 /**
 *
 * This is the event handler that gets called when a player
@@ -281,8 +289,11 @@ function stopGame(){
 *
 */
 function startGame(){
+  clearScore()
   setDuration(10);
+  startTimer()
   showUp();
+  lastHole = -1
   return "game started";
 }
 
