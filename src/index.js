@@ -154,7 +154,7 @@ function showAndHide(hole, delay){
 */
 function toggleVisibility(hole){
   // TODO: add hole.classList.toggle so that it adds or removes the 'show' class.
-  hole.classList.toggle('highlight');
+  hole.classList.toggle('show');
   return hole;
 }
 
@@ -233,9 +233,8 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
   console.log("Whack!")
-  updateScore()
+  updateScore();
 }
-  return points;
 
 /**
 *
@@ -259,6 +258,7 @@ function setEventListeners(){
 */
 function setDuration(duration) {
   time = duration;
+  timerDisplay.textContent = time;
   return time;
 }
 
