@@ -163,7 +163,6 @@ function toggleVisibility(hole){
   hole.classList.toggle('show');
   return hole;
 }
-showUp();
 
 /**
 *
@@ -228,8 +227,6 @@ function startTimer() {
   timer = setInterval(updateTimer, 1000);
   return timer;
 }
-
-startTimer();
 
 /**
 *
