@@ -163,6 +163,7 @@ function toggleVisibility(hole){
   hole.classList.toggle('show');
   return hole;
 }
+showUp();
 
 /**
 *
@@ -292,15 +293,11 @@ function stopGame(){
 *
 */
 function startGame(){
-  clearScore()
   setDuration(10);
   startTimer()
   showUp();
-  lastHole = -1
   return "game started";
 }
-
-startButton.addEventListener("click", startGame);
 
 
 // Please do not modify the code below.
